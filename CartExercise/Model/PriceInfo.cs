@@ -17,7 +17,8 @@ namespace CartExercise.Model
         {
             get
             {
-                return Value.ToString("F", culture);
+                //return Value.ToString("F", culture);
+                return Value.ToString("#0.00", CultureInfo.InvariantCulture);
             }
         }
     }
