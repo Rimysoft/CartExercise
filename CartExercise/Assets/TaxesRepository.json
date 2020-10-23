@@ -1,0 +1,14 @@
+[
+  {
+    "Description": "Basic Tax",
+    "PercentageValue": "10",
+    "Value": "0",
+    "Type": "Basic"
+  },
+  {
+    "Description": "Import Duty",
+    "PercentageValue": "5",
+    "Value": "0",
+    "Type": "ImportDuty"
+  }
+]
