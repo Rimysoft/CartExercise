@@ -68,12 +68,6 @@ namespace CartExercise.Services
             var taxesByProduct = taxService.GetTaxByProductType(cp.Product.Type, cp.Product.Imported);
             if(taxesByProduct != null)
             {
-                //double sum = 0;
-                //foreach (var item in taxesByProduct)
-                //{
-                //    sum += Helpers.Round(item.GetPercentageValue * cp.Product.Price.Value * cp.Quantity);
-                //}
-                //return Helpers.Round(sum);
                 return Helpers.Round(taxesByProduct.Sum(t => Helpers.Round(t.GetPercentageValue * cp.Product.Price.Value * cp.Quantity)));
             }
             //
@@ -82,13 +76,6 @@ namespace CartExercise.Services
 
         private List<string> GetCartProductsSummary()
         {
-            //var ret = new List<string>();
-            //foreach (var p in storeCart.CartProducts)
-            //{
-            //    ret.Add(p.Quantity.ToString() + " " + p.Product.Name + ": " + new PriceInfo(p.Product.Price.Value + CalcTaxValueByProduct(p)).GetFormattedStringValue);
-            //}
-            //return ret;
-
             return storeCart.CartProducts.Select(p => p.Quantity.ToString() + " " + p.Product.Name + ": " + new PriceInfo(p.Product.Price.Value + CalcTaxValueByProduct(p)).GetFormattedStringValue).ToList();
         }
 
